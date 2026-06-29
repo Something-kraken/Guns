@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>HOPE</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ENTER SCREEN -->
+
+<div id="enter-screen">
+
+    <div class="enter-box">
+
+        <img src="assets/logo.png" class="enter-logo">
+
+        <h1>HOPE</h1>
+
+        <p>Click to Enter</p>
+
+    </div>
+
+</div>
+
+<!-- BACKGROUND MUSIC -->
+
+<audio id="bg-music" loop>
+
+    <source src="music.mp3" type="audio/mp3">
+
+</audio>
+
+<!-- BACKGROUND VIDEO -->
+
+<video autoplay muted loop playsinline id="bg-video">
+
+    <source src="background.mp4" type="video/mp4">
+
+</video>
+
+<!-- DARK OVERLAY -->
+
+<div class="overlay"></div>
+
+<!-- SNOW -->
+
+<div id="snow"></div>
+
+<!-- MAIN -->
+
+<div class="container">
+
+<img src="logo.png" class="logo">
+
+<h1 class="title">HOPE</h1>
+
+<p class="jp">私の天国</p>
+
+<div class="discord-card">
+
+    <img src="profile.png" class="avatar">
+
+    <div class="details">
+
+        <h2>s1vage_</h2>
+
+        <span>last seen 18 hours ago</span>
+
+    </div>
+
+</div>
+
+<div class="icons">
+
+<a href="#">
+<i class="fab fa-discord"></i>
+</a>
+
+<a href="https://www.instagram.com/storiesofaadhieeee?igsh=YjU3ODFtcnN3bWVo">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="#">
+<img src="riot.png" class="riot">
+</a>
+
+<a href="#">
+<i class="fab fa-spotify"></i>
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+const enter=document.getElementById("enter-screen");
+const music=document.getElementById("bg-music");
+
+enter.onclick=()=>{
+
+music.currentTime=105;
+
+music.play();
+
+enter.classList.add("hide");
+
+}
+
+</script>
+
+</body>
+
+</html>
