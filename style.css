@@ -1,0 +1,348 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow:hidden;
+    background:#000;
+    color:#fff;
+}
+
+/* Background Video */
+
+#bg-video{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-3;
+}
+
+/* Dark Overlay */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(2px);
+    z-index:-2;
+}
+
+/* Snow */
+
+#snow{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background-image:
+    radial-gradient(white 1px,transparent 1px),
+    radial-gradient(white 2px,transparent 2px);
+
+    background-size:70px 70px,120px 120px;
+
+    animation:snow 20s linear infinite;
+
+    opacity:.45;
+}
+
+@keyframes snow{
+
+0%{
+background-position:0 0,0 0;
+}
+
+100%{
+background-position:0 1000px,0 600px;
+}
+
+}
+
+/* Click To Enter */
+
+#enter-screen{
+
+position:fixed;
+
+inset:0;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:#000;
+
+z-index:9999;
+
+transition:.8s;
+
+}
+
+#enter-screen.hide{
+
+opacity:0;
+
+visibility:hidden;
+
+}
+
+.enter-box{
+
+text-align:center;
+
+}
+
+.enter-logo{
+
+width:70px;
+
+margin-bottom:20px;
+
+filter:drop-shadow(0 0 18px #ff1f3f);
+
+}
+
+.enter-box h1{
+
+font-size:58px;
+
+font-family:'Cinzel',serif;
+
+letter-spacing:8px;
+
+color:white;
+
+text-shadow:
+
+0 0 15px crimson,
+
+0 0 35px crimson;
+
+}
+
+.enter-box p{
+
+margin-top:20px;
+
+font-size:18px;
+
+letter-spacing:4px;
+
+animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+50%{
+
+opacity:.35;
+
+}
+
+}
+
+/* Main */
+
+.container{
+
+position:relative;
+
+height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+/* Logo */
+
+.logo{
+
+width:60px;
+
+margin-bottom:20px;
+
+filter:drop-shadow(0 0 18px crimson);
+
+}
+
+/* Title */
+
+.title{
+
+font-size:60px;
+
+font-family:'Cinzel',serif;
+
+letter-spacing:8px;
+
+text-shadow:
+
+0 0 12px crimson,
+
+0 0 30px crimson;
+
+}
+
+/* Japanese */
+
+.jp{
+
+margin-top:8px;
+
+opacity:.75;
+
+font-size:15px;
+
+letter-spacing:3px;
+
+}
+
+/* Discord Card */
+
+.discord-card{
+
+margin-top:45px;
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+padding:18px 22px;
+
+border-radius:20px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:0 0 30px rgba(255,0,50,.25);
+
+}
+
+.avatar{
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:2px solid crimson;
+
+}
+
+.details h2{
+
+font-size:20px;
+
+}
+
+.details span{
+
+opacity:.75;
+
+font-size:13px;
+
+}
+
+/* Icons */
+
+.icons{
+
+display:flex;
+
+gap:35px;
+
+margin-top:35px;
+
+}
+
+.icons a{
+
+color:white;
+
+font-size:32px;
+
+transition:.3s;
+
+}
+
+.icons a:hover{
+
+color:crimson;
+
+transform:translateY(-6px);
+
+}
+
+.riot{
+
+width:34px;
+
+filter:invert(1);
+
+transition:.3s;
+
+}
+
+.riot:hover{
+
+transform:translateY(-6px);
+
+filter:
+
+invert(19%)
+
+sepia(95%)
+
+saturate(6000%)
+
+hue-rotate(345deg);
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.title{
+
+font-size:45px;
+
+}
+
+.discord-card{
+
+width:90%;
+
+}
+
+.icons{
+
+gap:25px;
+
+}
+
+}
