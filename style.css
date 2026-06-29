@@ -1,3 +1,7 @@
+/* ===============================
+   FLY V2 - PART 1
+=============================== */
+
 /* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500&display=swap');
 
@@ -6,6 +10,10 @@
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -18,12 +26,12 @@ body{
 
 #bg-video{
     position:fixed;
-    top:0;
-    left:0;
+    inset:0;
     width:100%;
     height:100%;
     object-fit:cover;
     z-index:-3;
+    transform:scale(1.03);
 }
 
 /* Dark Overlay */
@@ -31,8 +39,8 @@ body{
 .overlay{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.55);
-    backdrop-filter:blur(2px);
+    background:rgba(0,0,0,.62);
+    backdrop-filter:blur(3px);
     z-index:-2;
 }
 
@@ -50,7 +58,7 @@ body{
 
     animation:snow 20s linear infinite;
 
-    opacity:.45;
+    opacity:.35;
 }
 
 @keyframes snow{
@@ -65,32 +73,24 @@ background-position:0 1000px,0 600px;
 
 }
 
-/* Click To Enter */
+/* ENTER SCREEN */
 
 #enter-screen{
 
 position:fixed;
-
 inset:0;
-
 display:flex;
-
 justify-content:center;
-
 align-items:center;
-
 background:#000;
-
 z-index:9999;
-
-transition:.8s;
+transition:1s ease;
 
 }
 
 #enter-screen.hide{
 
 opacity:0;
-
 visibility:hidden;
 
 }
@@ -98,45 +98,37 @@ visibility:hidden;
 .enter-box{
 
 text-align:center;
+animation:fadeIn 1.2s ease;
 
 }
 
 .enter-logo{
 
-width:70px;
-
+width:75px;
 margin-bottom:20px;
-
-filter:drop-shadow(0 0 18px #ff1f3f);
+filter:drop-shadow(0 0 22px crimson);
 
 }
 
 .enter-box h1{
 
-font-size:58px;
-
+font-size:60px;
 font-family:'Cinzel',serif;
-
 letter-spacing:8px;
-
-color:white;
-
 text-shadow:
-
 0 0 15px crimson,
+0 0 35px crimson,
+0 0 60px rgba(255,0,60,.45);
 
-0 0 35px crimson;
+animation:titleGlow 4s infinite;
 
 }
 
 .enter-box p{
 
 margin-top:20px;
-
 font-size:18px;
-
 letter-spacing:4px;
-
 animation:pulse 2s infinite;
 
 }
@@ -144,109 +136,139 @@ animation:pulse 2s infinite;
 @keyframes pulse{
 
 50%{
-
-opacity:.35;
-
+opacity:.4;
 }
 
 }
 
-/* Main */
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+@keyframes titleGlow{
+
+0%,100%{
+text-shadow:
+0 0 12px crimson,
+0 0 30px crimson;
+}
+
+50%{
+text-shadow:
+0 0 20px crimson,
+0 0 55px crimson,
+0 0 80px rgba(255,0,60,.4);
+}
+
+}
+
+/* MAIN */
 
 .container{
 
 position:relative;
-
 height:100vh;
-
 display:flex;
-
 flex-direction:column;
-
 justify-content:center;
-
 align-items:center;
 
-}
+animation:fadeUp 1.2s ease;
 
-/* Logo */
+}
 
 .logo{
 
 width:60px;
-
 margin-bottom:20px;
-
-filter:drop-shadow(0 0 18px crimson);
+filter:drop-shadow(0 0 20px crimson);
 
 }
-
-/* Title */
 
 .title{
 
 font-size:60px;
-
 font-family:'Cinzel',serif;
-
-letter-spacing:8px;
+letter-spacing:10px;
 
 text-shadow:
+0 0 15px crimson,
+0 0 40px crimson;
 
-0 0 12px crimson,
-
-0 0 30px crimson;
+animation:titleGlow 5s infinite;
 
 }
-
-/* Japanese */
 
 .jp{
 
-margin-top:8px;
-
+margin-top:10px;
 opacity:.75;
-
 font-size:15px;
-
-letter-spacing:3px;
+letter-spacing:4px;
 
 }
 
-/* Discord Card */
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(25px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* PROFILE CARD */
 
 .discord-card{
+
+position:relative;
 
 margin-top:45px;
 
 display:flex;
-
 align-items:center;
-
 gap:18px;
 
-padding:18px 22px;
+padding:18px 24px;
 
-border-radius:20px;
+border-radius:22px;
 
 background:rgba(255,255,255,.08);
 
-backdrop-filter:blur(18px);
+backdrop-filter:blur(22px);
 
-border:1px solid rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.12);
 
-box-shadow:0 0 30px rgba(255,0,50,.25);
+box-shadow:
+0 0 30px rgba(255,0,60,.22);
+
+overflow:hidden;
+
+animation:
+floatCard 6s ease-in-out infinite;
 
 }
 
 .avatar{
 
-width:70px;
-
-height:70px;
-
+width:72px;
+height:72px;
 border-radius:50%;
-
 object-fit:cover;
 
 border:2px solid crimson;
@@ -256,14 +278,62 @@ border:2px solid crimson;
 .details h2{
 
 font-size:20px;
+font-weight:600;
 
 }
 
 .details span{
 
 opacity:.75;
-
 font-size:13px;
+
+}
+/* ===============================
+   FLY V2 - PART 2
+=============================== */
+
+/* Glass Shine */
+
+.discord-card::before{
+    content:"";
+    position:absolute;
+    top:-120%;
+    left:-60%;
+    width:40%;
+    height:300%;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.28),
+        transparent
+    );
+    transform:rotate(25deg);
+    animation:glassShine 14s linear infinite;
+}
+
+@keyframes glassShine{
+
+0%,85%{
+left:-80%;
+}
+
+100%{
+left:170%;
+}
+
+}
+
+/* Floating Card */
+
+@keyframes floatCard{
+
+0%,100%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-8px);
+}
 
 }
 
@@ -272,77 +342,45 @@ font-size:13px;
 .icons{
 
 display:flex;
-
-gap:35px;
-
-margin-top:35px;
+justify-content:center;
+align-items:center;
+gap:38px;
+margin-top:38px;
 
 }
 
 .icons a{
 
+display:flex;
+justify-content:center;
+align-items:center;
+
+width:52px;
+height:52px;
+
+border-radius:50%;
+
 color:white;
+font-size:26px;
 
-font-size:32px;
+background:rgba(255,255,255,.05);
 
-transition:.3s;
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:
+transform .35s ease,
+box-shadow .35s ease,
+background .35s ease,
+color .35s ease;
 
 }
 
 .icons a:hover{
 
-color:crimson;
+transform:translateY(-7px) scale(1.08);
 
-transform:translateY(-6px);
+background:rgba(220,20,60,.15);
 
-}
-
-.riot{
-
-width:34px;
-
-filter:invert(1);
-
-transition:.3s;
-
-}
-
-.riot:hover{
-
-transform:translateY(-6px);
-
-filter:
-
-invert(19%)
-
-sepia(95%)
-
-saturate(6000%)
-
-hue-rotate(345deg);
-
-}
-
-/* Mobile */
-
-@media(max-width:768px){
-
-.title{
-
-font-size:45px;
-
-}
-
-.discord-card{
-
-width:90%;
-
-}
-
-.icons{
-
-gap:25px;
-
-}
-
-}
+color
