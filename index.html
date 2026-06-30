@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>FLY</title>
 
@@ -19,33 +19,23 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 <!-- ENTER SCREEN -->
 
 <div id="enter-screen">
-
     <div class="enter-box">
-
-        <img src="logo.png" class="enter-logo">
-
+        <img src="logo.png" class="enter-logo" alt="Logo">
         <h1>FLY</h1>
-
         <p>Click to Enter</p>
-
     </div>
-
 </div>
 
 <!-- BACKGROUND MUSIC -->
 
 <audio id="bg-music" loop>
-
     <source src="music.mp3" type="audio/mp3">
-
 </audio>
 
 <!-- BACKGROUND VIDEO -->
 
 <video autoplay muted loop playsinline id="bg-video">
-
     <source src="background.mp4" type="video/mp4">
-
 </video>
 
 <!-- DARK OVERLAY -->
@@ -60,61 +50,50 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 
 <div class="container">
 
-<img src="logo.png" class="logo">
+    <img src="logo.png" class="logo" alt="Logo">
 
-<h1 class="title">FLY</h1>
+    <h1 class="title">FLY</h1>
 
-<p class="jp">私の天国</p>
+    <p class="jp">私の天国</p>
 
-<div class="discord-card">
+    <div class="discord-card">
 
-    <img src="profile.png" class="avatar">
+        <img src="profile.png" class="avatar" alt="Profile">
 
-    <div class="details">
+        <div class="details">
+            <h2>Yah1ko_</h2>
+            <span>Listening to Spotify 🎧</span>
+        </div>
 
-        <h2>Yah1ko_</h2>
+    </div>
 
-        <span>Listening to Spotify 🎧</span>
+    <div class="icons">
+
+        <a href="#" aria-label="Discord">
+            <i class="fab fa-discord"></i>
+        </a>
+
+        <a href="https://www.instagram.com/storiesofaadhieeee?igsh=YjU3ODFtcnN3bWVo"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://open.spotify.com/playlist/5M5KrKkjXR2MQ3Qt3Nzug2?si=pwRTvfuCSQajcgKTyXEBmA&pt=54cd28c2212e4248ca4c4b56f56d5abd&pi=ZUZxa6MwSzmDh"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Spotify">
+            <i class="fab fa-spotify"></i>
+        </a>
 
     </div>
 
 </div>
 
-<div class="icons">
+<!-- External JavaScript -->
 
-<a href="#">
-<i class="fab fa-discord"></i>
-</a>
-
-<a href="https://www.instagram.com/storiesofaadhieeee?igsh=YjU3ODFtcnN3bWVo" target="_blank">
-<i class="fab fa-instagram"></i>
-</a>
-
-
-<a href="https://open.spotify.com/playlist/5M5KrKkjXR2MQ3Qt3Nzug2?si=pwRTvfuCSQajcgKTyXEBmA&pt=54cd28c2212e4248ca4c4b56f56d5abd&pi=ZUZxa6MwSzmDh" target="_blank" rel="noopener noreferrer">
-<i class="fab fa-spotify"></i>
-</a>
-
-</div>
-
-</div>
-
-<script>
-
-const enter=document.getElementById("enter-screen");
-const music=document.getElementById("bg-music");
-
-enter.onclick=()=>{
-
-music.currentTime=105;
-
-music.play();
-
-enter.classList.add("hide");
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
