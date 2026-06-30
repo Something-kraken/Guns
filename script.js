@@ -35,16 +35,16 @@ for(let i = 0; i < 120; i++){
 
     flake.className = "flake";
 
-    flake.style.left = Math.random()*100 + "%";
+    flake.style.left = Math.random() * 100 + "%";
 
     flake.style.animationDelay =
-        Math.random()*10 + "s";
+        Math.random() * 10 + "s";
 
     flake.style.animationDuration =
-        (6 + Math.random()*8) + "s";
+        (6 + Math.random() * 8) + "s";
 
     flake.style.opacity =
-        0.2 + Math.random()*0.8;
+        0.2 + Math.random() * 0.8;
 
     flake.style.transform =
         `scale(${0.5 + Math.random()})`;
@@ -57,11 +57,11 @@ for(let i = 0; i < 120; i++){
 // Title Glow
 // ===============================
 
-setInterval(()=>{
+setInterval(() => {
 
     title.classList.toggle("pulse");
 
-},3000);
+}, 3000);
 
 // ===============================
 // Floating Profile Card
@@ -69,14 +69,14 @@ setInterval(()=>{
 
 let angle = 0;
 
-setInterval(()=>{
+setInterval(() => {
 
     angle += 0.03;
 
     if(!card.matches(":hover")){
 
         card.style.transform =
-        `translateY(${Math.sin(angle)*6}px)`;
+            `translateY(${Math.sin(angle) * 6}px)`;
 
     }
 
@@ -94,23 +94,24 @@ card.addEventListener("mousemove",(e)=>{
     const y = e.clientY - rect.top;
 
     const rotateY =
-        (x - rect.width/2)/18;
+        (x - rect.width / 2) / 18;
 
     const rotateX =
-        -(y - rect.height/2)/18;
+        -(y - rect.height / 2) / 18;
 
-    card.style.transform =
-        `perspective(900px)
+    card.style.transform = `
+        perspective(900px)
         rotateX(${rotateX}deg)
         rotateY(${rotateY}deg)
-        translateY(${Math.sin(angle)*6}px)`;
+        translateY(${Math.sin(angle) * 6}px)
+    `;
 
 });
 
 card.addEventListener("mouseleave",()=>{
 
     card.style.transform =
-        `translateY(${Math.sin(angle)*6}px)`;
+        `translateY(${Math.sin(angle) * 6}px)`;
 
 });
 
