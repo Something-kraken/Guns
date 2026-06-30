@@ -384,3 +384,12 @@ transform:translateY(-7px) scale(1.08);
 background:rgba(220,20,60,.15);
 
 color
+/* X icon (riot.png) */
+
+.riot{
+    width:18px !important;
+    height:18px !important;
+    object-fit:contain;
+    filter:invert(1);
+    transition:.35s;
+}
