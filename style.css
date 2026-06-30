@@ -55,9 +55,7 @@ body{
     radial-gradient(white 2px,transparent 2px);
 
     background-size:70px 70px,120px 120px;
-
     animation:snow 20s linear infinite;
-
     opacity:.35;
 }
 
@@ -115,6 +113,7 @@ filter:drop-shadow(0 0 22px crimson);
 font-size:60px;
 font-family:'Cinzel',serif;
 letter-spacing:8px;
+
 text-shadow:
 0 0 15px crimson,
 0 0 35px crimson,
@@ -158,16 +157,20 @@ transform:translateY(0);
 @keyframes titleGlow{
 
 0%,100%{
+
 text-shadow:
 0 0 12px crimson,
 0 0 30px crimson;
+
 }
 
 50%{
+
 text-shadow:
 0 0 20px crimson,
 0 0 55px crimson,
 0 0 80px rgba(255,0,60,.4);
+
 }
 
 }
@@ -178,6 +181,7 @@ text-shadow:
 
 position:relative;
 height:100vh;
+
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -191,7 +195,16 @@ animation:fadeUp 1.2s ease;
 
 width:60px;
 margin-bottom:20px;
+
 filter:drop-shadow(0 0 20px crimson);
+
+transition:.4s;
+
+}
+
+.logo:hover{
+
+transform:scale(1.08) rotate(4deg);
 
 }
 
@@ -213,6 +226,7 @@ animation:titleGlow 5s infinite;
 
 margin-top:10px;
 opacity:.75;
+
 font-size:15px;
 letter-spacing:4px;
 
@@ -221,13 +235,17 @@ letter-spacing:4px;
 @keyframes fadeUp{
 
 from{
+
 opacity:0;
 transform:translateY(25px);
+
 }
 
 to{
+
 opacity:1;
 transform:translateY(0);
+
 }
 
 }
@@ -259,8 +277,7 @@ box-shadow:
 
 overflow:hidden;
 
-animation:
-floatCard 6s ease-in-out infinite;
+animation:floatCard 6s ease-in-out infinite;
 
 }
 
@@ -268,10 +285,261 @@ floatCard 6s ease-in-out infinite;
 
 width:72px;
 height:72px;
+
 border-radius:50%;
+
 object-fit:cover;
 
 border:2px solid crimson;
+
+transition:.35s;
+
+}
+/* ===============================
+   FLY V2 - PART 2
+=============================== */
+
+/* Glass Shine */
+
+.discord-card::before{
+
+content:"";
+
+position:absolute;
+
+top:-120%;
+left:-60%;
+
+width:40%;
+height:300%;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.28),
+transparent
+);
+
+transform:rotate(25deg);
+
+animation:glassShine 14s linear infinite;
+
+}
+
+@keyframes glassShine{
+
+0%,85%{
+
+left:-80%;
+
+}
+
+100%{
+
+left:170%;
+
+}
+
+}
+
+/* Floating Card */
+
+@keyframes floatCard{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+}
+
+/* Icons */
+
+.icons{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:30px;
+
+margin-top:38px;
+
+}
+
+.icons a{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+width:52px;
+
+height:52px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.08);
+
+color:#fff;
+
+font-size:26px;
+
+text-decoration:none;
+
+transition:
+transform .35s ease,
+box-shadow .35s ease,
+background .35s ease,
+color .35s ease;
+
+}
+
+.icons a:hover{
+
+transform:translateY(-7px) scale(1.08);
+
+background:rgba(220,20,60,.15);
+
+color:crimson;
+
+box-shadow:
+0 0 22px rgba(220,20,60,.55);
+
+}
+
+/* Logo */
+
+.logo{
+
+transition:.4s;
+
+}
+
+.logo:hover{
+
+transform:scale(1.08) rotate(4deg);
+
+}
+
+/* Title */
+
+.title{
+
+transition:.4s;
+
+}
+
+.title:hover{
+
+letter-spacing:12px;
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.logo{
+
+width:54px;
+
+}
+
+.title{
+
+font-size:46px;
+
+letter-spacing:6px;
+
+}
+
+.jp{
+
+font-size:13px;
+
+}
+
+.discord-card{
+
+width:92%;
+
+padding:16px;
+
+}
+
+.avatar{
+
+width:64px;
+
+height:64px;
+
+}
+
+.details h2{
+
+font-size:18px;
+
+}
+
+.details span{
+
+font-size:12px;
+
+}
+
+.icons{
+
+gap:22px;
+
+margin-top:32px;
+
+}
+
+.icons a{
+
+width:46px;
+
+height:46px;
+
+font-size:22px;
+
+}
+
+}
+
+/* Smooth Transitions */
+
+*{
+
+transition:
+background .3s ease,
+color .3s ease;
+
+}
+
+.avatar:hover{
+
+transform:scale(1.05);
+
+box-shadow:
+0 0 18px crimson,
+0 0 35px rgba(255,0,60,.35);
 
 }
 
@@ -288,99 +556,3 @@ opacity:.75;
 font-size:13px;
 
 }
-/* ===============================
-   FLY V2 - PART 2
-=============================== */
-
-/* Glass Shine */
-
-.discord-card::before{
-    content:"";
-    position:absolute;
-    top:-120%;
-    left:-60%;
-    width:40%;
-    height:300%;
-    background:linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,.28),
-        transparent
-    );
-    transform:rotate(25deg);
-    animation:glassShine 14s linear infinite;
-}
-
-@keyframes glassShine{
-
-0%,85%{
-left:-80%;
-}
-
-100%{
-left:170%;
-}
-
-}
-
-/* Floating Card */
-
-@keyframes floatCard{
-
-0%,100%{
-transform:translateY(0px);
-}
-
-50%{
-transform:translateY(-8px);
-}
-
-}
-
-/* Icons */
-
-.icons{
-
-display:flex;
-justify-content:center;
-align-items:center;
-gap:38px;
-margin-top:38px;
-
-}
-
-.icons a{
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-width:52px;
-height:52px;
-
-border-radius:50%;
-
-color:white;
-font-size:26px;
-
-background:rgba(255,255,255,.05);
-
-backdrop-filter:blur(12px);
-
-border:1px solid rgba(255,255,255,.08);
-
-transition:
-transform .35s ease,
-box-shadow .35s ease,
-background .35s ease,
-color .35s ease;
-
-}
-
-.icons a:hover{
-
-transform:translateY(-7px) scale(1.08);
-
-background:rgba(220,20,60,.15);
-
-color
